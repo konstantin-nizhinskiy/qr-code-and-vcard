@@ -2,7 +2,7 @@
 name: qr-code-and-vcard
 version: 0.9.0
 author: Konstantin Nizhinskiy <konstantin.nizhinskiy@gmail.com>
-date: 2017-06-28 18:06:47 
+date: 2017-06-28 21:06:52 
 
 */
 (function (root, factory) {
@@ -2223,9 +2223,9 @@ var qrcode = function() {
  *
  * @param options {string|object}
  * @param options.typeNumber {number} - Type number (1 ~ 40)
- * @param options.typeElement {number} - Type element create QR ('createImg','createSvg','createTable')
+ * @param options.typeElement {string} - Type element create QR ('createImg','createSvg','createTable')
  * @param options.errorCorrectionLevel {string} - Error correction level ('L', 'M', 'Q', 'H')
- * @param options.data {string} - Error correction level ('L', 'M', 'Q', 'H')
+ * @param options.data {string} - Data for qr
  * @param options.mode {string} - Mode ('Numeric', 'Alphanumeric', 'Byte'(default), 'Kanji')
  * @param options.cellSize {number} - Size qr default: 2
  * @param options.margin {number} - Margin qr default: cellSize * 4
@@ -2270,23 +2270,78 @@ QrCode.prototype.createQr = function (options) {
         default:
             throw new Error('Not found typeElement ['+options.typeElement+'}')
     }
-
-    //createImg
-    //createSvg
-    //createTable
-
 };
-/*
-data	string	string to encode
-mode	string
 
- cellSize	number	default: 2
- margin	number	default: cellSize * 4
-
-    */
+/**
+ * Create vCard (https://en.wikipedia.org/wiki/VCard)
+ *
+ * @param vCard {object}
+ * @param vCard.version {string} - The version of the vCard specification. In versions 3.0 and 4.0, this must come right after the BEGIN property.
+ * @param vCard.formattedName {string} - Customize contact name
+ * @param vCard.firstName {string} - First name contact
+ * @param vCard.middleName {string} - Middle name contact
+ * @param vCard.lastName {string} - Last name contact
+ * @param vCard.namePrefix {string} - Add prefix name
+ * @param vCard.nameSuffix {string} - Add suffix name
+ * @param vCard.nickname {string} - One or more descriptive/familiar names for the object represented by this vCard.
+ * @param vCard.gender {string} - Defines the person's gender.
+ * @param vCard.birthday {string} - Date of birth of the individual associated with the vCard.
+ * @param vCard.anniversary {string} - Defines the person's anniversary.
+ * @param vCard.email {array|string} - HOME The address for electronic mail communication with the vCard object.
+ * @param vCard.workEmail {array|string} - WORK The address for electronic mail communication with the vCard object.
+ * @param vCard.otherEmail {array|string} -OTHER The address for electronic mail communication with the vCard object.
+ * @param vCard.logo {object} - An image or graphic of the logo of the organization that is associated with the individual to which the vCard belongs.
+ * @param vCard.logo.url {string} - Url to img
+ * @param vCard.logo.mediaType {string} - type
+ * @param vCard.logo.base64 {boolean} - format img
+ * @param vCard.photo {object} - An image or photograph of the individual associated with the vCard.
+ * @param vCard.photo.url {string} -  Url to img
+ * @param vCard.photo.mediaType {string} - type
+ * @param vCard.photo.base64 {boolean} - format img
+ * @param vCard.cellPhone {array|string} - Phone cellular
+ * @param vCard.pagerPhone {array|string} - Phone to send messages to a pager
+ * @param vCard.homePhone {array|string} - Phone home
+ * @param vCard.workPhone {array|string} - Phone work
+ * @param vCard.homeFax {array|string} - Fax home
+ * @param vCard.workFax {array|string} - Fax work
+ * @param vCard.otherPhone {array|string} - Other phone
+ *
+ * @param vCard.homeAddress {object} - Home address
+ * @param vCard.homeAddress.label {string} - Represents the actual text that should be put on the mailing label when delivering a physical package to the person/object associated with the vCard (related to the ADR property).
+ * @param vCard.homeAddress.street {string} - Home street
+ * @param vCard.homeAddress.city {string} - Home city
+ * @param vCard.homeAddress.stateProvince {string} - Home stateProvince
+ * @param vCard.homeAddress.postalCode {string} - Home postalCode
+ * @param vCard.homeAddress.countryRegion {string} - Home countryRegion
+ * @param vCard.workAddress {object} - Home workAddress
+ * @param vCard.workAddress.label {string} -  Represents the actual text that should be put on the mailing label when delivering a physical package to the person/object associated with the vCard (related to the ADR property).
+ * @param vCard.workAddress.street {string} - Work street
+ * @param vCard.workAddress.city {string} - Work city
+ * @param vCard.workAddress.stateProvince {string} - Work stateProvince
+ * @param vCard.workAddress.postalCode {string} - Work postalCode
+ * @param vCard.workAddress.countryRegion {string} - Work countryRegion
+ * @param vCard.title {string} - Specifies the job title, functional position or function of the individual associated with the vCard object within an organization.
+ * @param vCard.role {string} - The role, occupation, or business category of the vCard object within an organization.
+ * @param vCard.organization {string} - The name and optionally the unit(s) of the organization associated with the vCard object. This property is based on the X.520 Organization Name attribute and the X.520 Organization Unit attribute.
+ * @param vCard.url {string} - A URL pointing to a website that represents the person in some way.
+ * @param vCard.workUrl {string} - Work URL pointing to a website that represents the person in some way.
+ * @param vCard.note {string} - Specifies supplemental information or a comment that is associated with the vCard.
+ * @param vCard.socialUrls {object} - Social contact
+ * @param vCard.socialUrls.facebook {string} - facebook
+ * @param vCard.socialUrls.linkedIn {string} - linkedIn
+ * @param vCard.socialUrls.twitter {string} - twitter
+ * @param vCard.socialUrls.flickr {string} - flickr
+ * @param vCard.socialUrls.skype {string} - skype
+ * @param vCard.socialUrls.[custom] {string} - Other social
+ * @param vCard.source {string} - By default, if this property is not grouped with other properties it specifies the pronunciation of the FN property of the vCard object
+ * @param vCard.rev {string} - A timestamp for the last time the vCard was updated.
+ *
+ * @return {string}
+ *
+ *
+ */
 
 QrCode.prototype.createVCard = function (vCard) {
-
 
     var majorVersion = getMajorVersion(vCard.version),
         formattedVCardString='',
@@ -2549,14 +2604,11 @@ QrCode.prototype.createVCard = function (vCard) {
                 formattedVCardString += 'X-SOCIALPROFILE' + encodingPrefix + ';TYPE=' + key + ';x-user=' + e(vCard.socialUrls[key])+":"+getSocialUrls(key,vCard.socialUrls[key]) + nl();
             }
         }
-   //     X-SOCIALPROFILE;TYPE=linkedIn;x-user=https://linkedin/johndoe
     }
-   // X-SOCIALPROFILE;type=twitter;x-user=tesrtwitter:http://twitter.com/tesrtwitter
-     //   X-SOCIALPROFILE;TYPE=twitter:https://twitter/johndoe
     if (vCard.source) {
         formattedVCardString += 'SOURCE' + encodingPrefix + ':' + e(vCard.source) + nl();
     }
-    if (vCard.REV) {
+    if (vCard.rev) {
         formattedVCardString += 'REV:' + e(vCard.REV) + nl();
     }
     formattedVCardString += 'END:VCARD' + nl();
@@ -2564,7 +2616,7 @@ QrCode.prototype.createVCard = function (vCard) {
 }
 
 /**
- * Create QR code
+ * Create QR code from vCard
  *
  *
  * @param vCard {object} - object vCard
