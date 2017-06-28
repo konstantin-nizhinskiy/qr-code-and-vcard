@@ -1,0 +1,9 @@
+.idea
+node_modules/
+bower_components/
+
+
+cache
+/wiki/
+/_tmp/
+/npm-debug.log

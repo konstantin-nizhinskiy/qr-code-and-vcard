@@ -1,0 +1,40 @@
+{
+  "name": "qr-code-and-vcard",
+  "description": "",
+  "version": "0.9.0",
+  "main": "",
+  "authors": [
+    "Konstantin Nizhinskiy <konstantin.nizhinskiy@gmail.com>"
+  ],
+  "dependencies": {
+
+  },
+  "keywords": [
+    "qr",
+    "qr-create",
+    "qr-code",
+    "vcard",
+    "qr-vcard"
+  ],
+  "devDependencies": {
+  },
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src",
+    "wiki",
+    "grunt",
+    "cache",
+    "_tmp",
+    "doc",
+    "mockServer",
+    "Gruntfile.js",
+    "server.js",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
