@@ -19,7 +19,7 @@ QrCode.prototype.createQr = function (options) {
         }
     }
     if(!options.typeNumber){
-        options.typeNumber=4;
+        options.typeNumber=15;
     }
     if(!options.typeElement){
         options.typeElement='createImg';
