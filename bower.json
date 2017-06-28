@@ -1,6 +1,6 @@
 {
   "name": "qr-code-and-vcard",
-  "description": "",
+  "description": "This module allows you to generate qr code and vCard format contact",
   "version": "0.9.1",
   "main": "",
   "authors": [
