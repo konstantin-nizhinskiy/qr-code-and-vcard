@@ -1,7 +1,7 @@
 QR code and vCard generations 
 =============================
 
-This module allows you to generate qr code and vCard format contact. Module support cyrillic (utf-8)
+This module allows you to generate qr code and create vCard contact. Module support cyrillic (utf-8)
 
  * [download](#download)
  * [Loader supports](#loader-supports)
