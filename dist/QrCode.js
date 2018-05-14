@@ -1,8 +1,8 @@
 /*
 name: qr-code-and-vcard
-version: 0.9.0
+version: 0.9.2
 author: Konstantin Nizhinskiy <konstantin.nizhinskiy@gmail.com>
-date: 2017-06-28 21:06:52 
+date: 2018-05-14 15:05:04 
 
 */
 (function (root, factory) {
@@ -2239,7 +2239,7 @@ QrCode.prototype.createQr = function (options) {
         }
     }
     if(!options.typeNumber){
-        options.typeNumber=4;
+        options.typeNumber=15;
     }
     if(!options.typeElement){
         options.typeElement='createImg';

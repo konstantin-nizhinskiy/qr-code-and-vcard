@@ -67,10 +67,10 @@
 
     //console.log(qrCode.createVCard(testCard))
     try {
-        document.getElementById('qr').innerHTML = qrCode.createVCardQr(testCard,{typeNumber:20,cellSize:5});
+        document.getElementById('qr').innerHTML = qrCode.createVCardQr(testCard,{typeNumber:20,cellSize:3});
     }catch(e){
         try {
-            document.getElementById('qr').innerHTML = qrCode.createVCardQr(testCard, {typeNumber: 25, cellSize: 5});
+            document.getElementById('qr').innerHTML = qrCode.createVCardQr(testCard, {typeNumber: 25, cellSize: 3});
         }catch(e){
             document.getElementById('qr').innerHTML = qrCode.createVCardQr(testCard, {typeElement:"createTable",typeNumber: 30, cellSize: 5});
         }

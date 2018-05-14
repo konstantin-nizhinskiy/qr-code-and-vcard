@@ -1,9 +1,20 @@
 {
   "name": "qr-code-and-vcard",
   "description": "",
-  "version": "0.9.0",
-  "authors": [
-    "Konstantin Nizhinskiy <konstantin.nizhinskiy@gmail.com>"
+  "license": "MIT",
+  "version": "0.9.1",
+  "author": "Konstantin Nizhinskiy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konstantin-nizhinskiy/I18n.git"
+  },
+  "bugs": {
+    "url": "https://github.com/konstantin-nizhinskiy/I18n/issues"
+  },
+  "files": [
+    "dist",
+    "History.md",
+    "LICENSE-MIT"
   ],
   "devDependencies": {
     "grunt": "~0.4.4",
