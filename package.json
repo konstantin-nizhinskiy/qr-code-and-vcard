@@ -6,10 +6,10 @@
   "author": "Konstantin Nizhinskiy",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/konstantin-nizhinskiy/I18n.git"
+    "url": "git+https://github.com/konstantin-nizhinskiy/qr-code-and-vcard.git"
   },
   "bugs": {
-    "url": "https://github.com/konstantin-nizhinskiy/I18n/issues"
+    "url": "https://github.com/konstantin-nizhinskiy/qr-code-and-vcard/issues"
   },
   "files": [
     "dist",
